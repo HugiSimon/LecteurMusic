@@ -4,15 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/barleyWhite">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_outline"
+        android:clipToOutline="true"
+        android:src="@drawable/lyfe" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Out thë way - Yeat"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/tacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageButton
+            android:id="@+id/ibtnRepeat"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle_double_active"
+            android:contentDescription="gg"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_repeat_24"
+            app:tint="@color/barleyWhite" />
+
+        <ImageButton
+            android:id="@+id/ibtnStop"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_stop_24"
+            android:contentDescription="gg"
+            app:tint="@color/barleyWhite" />
+
+        <ImageButton
+            android:id="@+id/ibtnSkipPrevious"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_skip_previous_24"
+            android:contentDescription="ggg"
+            app:tint="@color/barleyWhite" />
+
+        <ImageButton
+            android:id="@+id/ibtnPlay"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_play_arrow_24"
+            android:contentDescription="gg"
+            app:tint="@color/barleyWhite" />
+
+        <ImageButton
+            android:id="@+id/ibtnSkipNext"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_skip_next_24"
+            android:contentDescription="g"
+            app:tint="@color/barleyWhite" />
+
+        <ImageButton
+            android:id="@+id/ibtnShuffle"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/circle_active"
+            android:padding="16dp"
+            app:srcCompat="@drawable/baseline_shuffle_24"
+            android:contentDescription="gg"
+            app:tint="@color/barleyWhite" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
