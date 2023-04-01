@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/round_outline"
         android:clipToOutline="true"
-        android:src="@drawable/lyfe" />
+        android:src="@drawable/album_lyfe" />
 
     <TextView
         android:id="@+id/textView"
@@ -26,21 +26,22 @@
         android:layout_margin="8dp"
         android:gravity="center"
         android:text="Out thë way - Yeat"
+        android:textColor="@color/tacao"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/tacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="8dp">
 
         <ImageButton
             android:id="@+id/ibtnRepeat"
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
-            android:background="@drawable/circle_double_active"
+            android:background="@drawable/circle_active"
             android:contentDescription="gg"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_repeat_24"
@@ -63,9 +64,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:background="@drawable/circle"
+            android:contentDescription="gg"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_stop_24"
-            android:contentDescription="gg"
             app:tint="@color/barleyWhite" />
 
         <ImageButton
@@ -76,9 +77,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:background="@drawable/circle"
+            android:contentDescription="ggg"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_skip_previous_24"
-            android:contentDescription="ggg"
             app:tint="@color/barleyWhite" />
 
         <ImageButton
@@ -89,9 +90,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:background="@drawable/circle"
+            android:contentDescription="gg"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_play_arrow_24"
-            android:contentDescription="gg"
             app:tint="@color/barleyWhite" />
 
         <ImageButton
@@ -102,9 +103,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:background="@drawable/circle"
+            android:contentDescription="g"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_skip_next_24"
-            android:contentDescription="g"
             app:tint="@color/barleyWhite" />
 
         <ImageButton
@@ -114,13 +115,24 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
-            android:background="@drawable/circle_active"
+            android:background="@drawable/circle"
+            android:contentDescription="gg"
             android:padding="16dp"
             app:srcCompat="@drawable/baseline_shuffle_24"
-            android:contentDescription="gg"
             app:tint="@color/barleyWhite" />
 
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvListSong"
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:layout_margin="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="8dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

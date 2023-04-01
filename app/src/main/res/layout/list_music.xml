@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/ivAlbum"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        tools:srcCompat="@drawable/album_lyfe"
+        android:background="@drawable/round_outline"
+        android:clipToOutline="true"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="260dp"
+        android:layout_height="78dp"
+        android:layout_margin="8dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/ivAlbum">
+
+        <TextView
+            android:id="@+id/tvTitre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Out thë way"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvArtiste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-4dp"
+            android:text="Yeat" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDuree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2:30"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
