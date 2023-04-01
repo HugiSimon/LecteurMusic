@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.lecteurmusic.adapter.MusicAdapter
 import com.example.lecteurmusic.model.MusicModel
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     var pos = 0
     var repeat = 1
     var shuffle = 0
+    var sort = 0
 
     var musics = arrayOf<MusicModel>()
     var musicsBase = arrayOf<MusicModel>()
@@ -27,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         createListMusic()
         chooseMusic()
         playPause()
-        stop()
+        //stop()
+        sort()
         btnNext()
         previous()
         repeat()
@@ -75,13 +78,43 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun stop() {
+    /*private fun stop() {
         val ibtnStop = findViewById<ImageButton>(R.id.ibtnStop)
         ibtnStop.setOnClickListener {
             mediaPlayer.stop()
             val ibtnPlay = findViewById<ImageButton>(R.id.ibtnPlay)
             ibtnPlay.setImageResource(R.drawable.baseline_play_arrow_24)
         }
+    }*/
+
+    private fun sort() {
+        val ibtnSort = findViewById<ImageButton>(R.id.ibtnSort)
+        ibtnSort.setOnClickListener {
+            sort++
+            if (sort > 2) {
+                sort = 0
+            }
+            when (sort) {
+                0 -> {
+                    musics = musicsBase
+                    ibtnSort.background = getDrawable(R.drawable.circle)
+                    val Toast = Toast.makeText(applicationContext, "Sort by default", Toast.LENGTH_SHORT).show()
+                }
+                1 -> {
+                    musics = musics.sortedBy { it.title }.toTypedArray()
+                    ibtnSort.background = getDrawable(R.drawable.circle_active)
+                    val Toast = Toast.makeText(applicationContext, "Sort by name", Toast.LENGTH_SHORT).show()
+                }
+                2 -> {
+                    musics = musics.sortedBy { it.artist }.toTypedArray()
+                    ibtnSort.background = getDrawable(R.drawable.circle_double_active)
+                    val Toast = Toast.makeText(applicationContext, "Sort by artist", Toast.LENGTH_SHORT).show()
+                }
+            }
+            val mListView = findViewById<ListView>(R.id.lvListSong)
+            mListView.adapter = MusicAdapter(this, musics)
+        }
+
     }
 
     private fun btnNext() {
